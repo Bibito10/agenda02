@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+ 
+  <div>
+  
+  </div>
+  
+<form class="form-inline" method="GET" action="/cadastro" th:object="${dados}">
+  <div class="form-group mx-sm-3 mb-2">
+    <input type="text" th:field="*{id}" readonly="readonly" class="form-control" >
+    <input type="text" th:field="*{nome}"  class="form-control">
+        <input type="email" th:field="*{email}"  class="form-control">
+            <input type="text" th:field="*{numero}"  class="form-control">
+  </div>
+   <input type="submit" class="btn btn-success" value="Editar">
+</form>
+</body>
+</html>

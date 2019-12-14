@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+      body{
+        background-color: #1A3E88;
+      }
+      label{
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+  <form class="" action="/cadastro" method="post">
+    <label>Nome:</label>
+    <input type="text" name="descricao" value="">
+    <input type="submit" value="Salvar">
+  </form>
+  
+  <table border="1px"  class="table table-dark">  
+  	<tr>
+  		<th scope="col">Código</th>
+  		<th scope="col">Descrição</th>
+  		<th scope="col">Excluir</th> 
+  		<th scope="col">Editar</th> 		
+  	</tr>
+  	<tr th:each="p : ${produto}">
+  		<td scope="col" th:text=${p.id}>1</td>
+  		<td scope="col" th:text="${p.descricao}">Arroz</td>  	
+  		<td scope="col"><a class="btn btn-outline-danger" th:href="@{/delete/{id}(id=${p.id})}">Excluir</a></td>	
+  		<td scope="col"><a class="btn btn-outline-success" th:href="@{/editar/{id}(id=${p.id})}">Editar</a></td>
+  	</tr>
+  </table>
+  </body>
+</html>
